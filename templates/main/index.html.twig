@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MainController!{% endblock %}
+
+{% block body %}
+{{ include('main/form.html.twig') }}
+
+{% for document in documents %}
+
+<div class="card w-50 m-auto mt-5 p-2">
+    <h3> télécharger </h3>
+    <a href="{{asset (vich_uploader_asset (document))}}" download><button class="btn btn-primary"> {{document.name}} </button></a>
+</div>
+{% endfor %}
+{% endblock %}
